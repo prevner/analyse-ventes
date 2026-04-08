@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  db:
+    image: nouchka/sqlite3
+    container_name: sqlite_service
+    volumes:
+      - ./database:/data
+    stdin_open: true
+    tty: true
+
+  scripts:
+    build: .
+    container_name: scripts_service
+    depends_on:
+      - db
+    volumes:
+      - ./script:/app/script
+      - ./data:/app/data
+      - ./database:/app/database
