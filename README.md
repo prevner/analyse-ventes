@@ -1,8 +1,8 @@
 
-# 📊 Analyse des ventes d’une PME
+#  Analyse des ventes d’une PME
 **Projet Data Engineer – Architecture Docker & SQLite**
 
-## 🧭 Contexte du projet
+##  Contexte du projet
 
 Ce projet s’inscrit dans le cadre d’un **exercice de positionnement Data Engineer**.  
 L’objectif est de mettre en place une **architecture data simple, conteneurisée**, permettant à une PME d’analyser ses ventes afin de faciliter la prise de décision stratégique.
@@ -14,7 +14,7 @@ Les données exploitées concernent :
 
 ---
 
-## 🎯 Objectifs
+##  Objectifs
 
 - Concevoir une architecture Docker à deux services
 - Stocker les données dans une base SQLite
@@ -25,7 +25,7 @@ Les données exploitées concernent :
 
 ---
 
-## 🏗️ Architecture technique
+##  Architecture technique
 
 ### Services
 
@@ -43,7 +43,7 @@ Les données exploitées concernent :
 ## 📁 Structure du projet
 
 ```
-projet-ventes-pme/
+projet-ventes/
 │
 ├── Dockerfile
 ├── docker-compose.yml
@@ -54,16 +54,19 @@ projet-ventes-pme/
 │   └── ventes.csv
 │
 ├── scripts/
-│   ├── init_db.py
+│   ├── create_db.py
 │   ├── import_data.py
-│   └── run_analysis.py
+│   ├── connexion_sqlit_readfile.py
+│   ├── analyse.py
+│   ├── import_data.py
+│   └── main.py
 │
 └── README.md
 ```
 
 ---
 
-## 🗃️ Modélisation des données
+##  Modélisation des données
 
 ### Table magasins
 - id_magasin (clé primaire)
@@ -83,11 +86,11 @@ projet-ventes-pme/
 - quantite
 - id_magasin (clé étrangère)
 
-✅ Une contrainte d’unicité est appliquée sur (date, id_produit, id_magasin).
+. Une contrainte d’unicité est appliquée sur (date, id_produit, id_magasin).
 
 ---
 
-## 🚀 Lancement du projet
+##  Lancement du projet
 
 ### Prérequis
 - Docker
@@ -132,7 +135,7 @@ Cette commande permet de :
 
 ---
 
-## 🔮 Améliorations possibles
+##  Améliorations possibles
 
 - Ajout d’un outil de visualisation (Metabase, Power BI)
 - Migration vers PostgreSQL
@@ -140,6 +143,6 @@ Cette commande permet de :
 
 ---
 
-## 👤 Auteur
+##  Auteur : Dixy Prevner
 
 Projet réalisé dans le cadre d’un **positionnement Data Engineer – Simplon.co**
